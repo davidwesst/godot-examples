@@ -11,8 +11,8 @@ public partial class Button : Godot.Button
 
 	void OnPressed()
 	{
-		Resource dialogueResource = GD.Load<Resource>("res://resources/test.dialogue");
-		DialogueManager.ShowExampleDialogueBalloon(dialogueResource);
+		//Resource dialogueResource = GD.Load<Resource>("res://resources/test.dialogue");
+		//DialogueManager.ShowExampleDialogueBalloon(dialogueResource);
 	}
 
 	
