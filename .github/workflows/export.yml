@@ -37,7 +37,7 @@ jobs:
 
         - name: Export Game
           run: |
-            godot --headless --quit --export-template "Windows Desktop"
+            godot --headless --quit --path ./ --export-release "Windows Desktop"
 
         - name: Upload Artifact
           uses: actions/upload-artifact@v4
