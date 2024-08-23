@@ -1,0 +1,51 @@
+name: Export
+on:
+  push:
+    branches: 
+    - main
+
+jobs:
+    export-on-linux:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                shell: bash
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: '8.x'
+        
+        - name: Setup Godot
+          uses: chickensoft-games/setup-godot@v1
+          with:
+            version: 4.2.2
+            use-dotnet: true
+            include-templates: true
+        
+        - name: Verify Install
+          run: |
+            dotnet --version
+            godot --version
+
+        - name: Build Solution
+          run: |
+            godot --headless --quit --build-solutions --path ./
+
+        - name: Export Game
+          run: |
+            godot --headless --quit --export-template "Windows Desktop"
+
+        - name: Upload Artifact
+          uses: actions/upload-artifact@v4
+          with:
+            overwrite: true
+            path: ./exports/windows/
+            if-no-files-found: error
+            retention-days: 1
+
+            
+
