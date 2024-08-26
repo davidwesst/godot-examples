@@ -4,7 +4,7 @@ A repository for creating examples, demos, or whatever one-off issue I am trying
 
 ## Table of Contents
 
-- [`dialogue-manager-build-error`]() - An issue I hit trying to create a GitHub Workflow for a Godot 4.2.2-csharp project where the Export step would fail, only when the [Dialogue Manager]() was included in the project.
+- [`dialogue-manager-build-error`](https://github.com/davidwesst/godot-examples/tree/dialogue-manager-build-error) - An issue I hint trying to create a GitHub Workflow for a Godot 4.2.2-csharp project where the Export step would fail, only when the [Dialogue Manager](https://github.com/davidwesst/godot-examples/tree/dialogue-manager-build-error) was included in the project.
 
 ## Development Notes
 
